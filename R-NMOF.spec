@@ -4,25 +4,17 @@
 #
 Name     : R-NMOF
 Version  : 1.4.3
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/NMOF_1.4-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/NMOF_1.4-3.tar.gz
 Summary  : Numerical Methods and Optimization in Finance
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-quadprog
 BuildRequires : R-quadprog
 BuildRequires : buildreq-R
 
 %description
-"Numerical Methods and Optimization in Finance" by M.
- Gilli, D. Maringer and E. Schumann (2011), ISBN
- 978-0123756626. The package provides implementations of
- several optimisation heuristics, such as Differential
- Evolution, Genetic Algorithms and Threshold Accepting.
- There are also functions for the valuation of financial
- instruments, such as bonds and options, and functions that
- help with stochastic simulations.
+To run the tests, go to file 'runTests' in directory 'unitTests'.
 
 %prep
 %setup -q -c -n NMOF
@@ -32,11 +24,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535164284
+export SOURCE_DATE_EPOCH=1552793829
 
 %install
+export SOURCE_DATE_EPOCH=1552793829
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1535164284
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library NMOF|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  NMOF || :
 
 
 %files
@@ -179,6 +170,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/NMOF/help/paths.rds
 /usr/lib64/R/library/NMOF/html/00Index.html
 /usr/lib64/R/library/NMOF/html/R.css
+/usr/lib64/R/library/NMOF/tests/README
 /usr/lib64/R/library/NMOF/unitTests/runTests.R
 /usr/lib64/R/library/NMOF/unitTests/test_results.txt
 /usr/lib64/R/library/NMOF/unitTests/unitTests2.R
