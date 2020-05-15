@@ -4,7 +4,7 @@
 #
 Name     : R-NMOF
 Version  : 2.1.0
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/NMOF_2.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/NMOF_2.1-0.tar.gz
 Summary  : Numerical Methods and Optimization in Finance
@@ -15,29 +15,27 @@ BuildRequires : R-quadprog
 BuildRequires : buildreq-R
 
 %description
-The file NMOFman.R contains the code from the
-NMOF manual.
-The file NMOFex.R contains the code from the report
-'Examples and Extensions for the NMOF package' (but
-this report was superseded by the NMOF manual).
+second edition of "Numerical Methods and Optimization in Finance"
+  by M. Gilli, D. Maringer and E. Schumann
 
 %prep
 %setup -q -c -n NMOF
+cd %{_builddir}/NMOF
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586276995
+export SOURCE_DATE_EPOCH=1589522720
 
 %install
-export SOURCE_DATE_EPOCH=1586276995
+export SOURCE_DATE_EPOCH=1589522720
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
