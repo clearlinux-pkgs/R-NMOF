@@ -4,7 +4,7 @@
 #
 Name     : R-NMOF
 Version  : 2.7.0
-Release  : 48
+Release  : 49
 URL      : https://cran.r-project.org/src/contrib/NMOF_2.7-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/NMOF_2.7-0.tar.gz
 Summary  : Numerical Methods and Optimization in Finance
