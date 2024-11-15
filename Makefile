@@ -1,5 +1,5 @@
 PKG_NAME := R-NMOF
-URL = https://cran.r-project.org/src/contrib/NMOF_2.8-0.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/NMOF_2.10-1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
